@@ -1,0 +1,140 @@
+<div class="container">
+    
+    <div class="row">
+        <div class="col-12 d-flex justify-content-end">
+            <img src="/assets/images/notification-bell.jpg" height="25px" />
+            <h5>We received {{selectedCharacters.length}} results</h5>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-12 justify-content-start">
+            <h1>Lord of the rings</h1>
+        </div>
+    </div>
+
+    <ng-container *ngIf="loading">
+        <div class="row">
+            <div class="col-12 d-flex justify-content-center">
+                <img src="/assets/images/spinner.gif" height="200px" />
+            </div>
+            
+            <div class="col-12 d-flex justify-content-center">
+                <h6>Loading characters..</h6>
+            </div>
+        </div>
+    </ng-container>
+    
+    <ng-container *ngIf="!loading">
+        <div class="row">
+            <div class="col-12">
+                <form [formGroup]="charactersForm">
+                    <div class="row mt-5">
+                        <div class="col-6">
+                            <h6>Name</h6>
+                            <div class="form-group">
+                                <select class="form-control" formControlName=name (ngModelChange)="fetchCharactersForSelectedCriteria()">
+                                    <option *ngFor="let name of names" [ngValue]="name">{{name}}</option>
+                                </select>
+                            </div>
+                        </div>
+    
+                        <div class="col-6">
+                            <h6>Hair Color</h6>
+                            <div class="form-group">
+                                <select class="form-control" formControlName=hairColor (ngModelChange)="fetchCharactersForSelectedCriteria()">
+                                    <option *ngFor="let hairColor of hairColors" [ngValue]="hairColor">{{hairColor}}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="row mt-5">
+                        <div class="col-6">
+                            <h6>Gender</h6>
+                            <div class="form-group">
+                                <select class="form-control" formControlName=gender (ngModelChange)="fetchCharactersForSelectedCriteria()">
+                                    <option *ngFor="let gender of genders" [ngValue]="gender">{{gender}}</option>
+                                </select>
+                            </div>
+                        </div>
+    
+                        <div class="col-6">
+                            <h6>Race</h6>
+                            <div class="form-group">
+                                <select class="form-control" formControlName=race (ngModelChange)="fetchCharactersForSelectedCriteria()">
+                                    <option *ngFor="let race of races" [ngValue]="race">{{race}}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="row mt-3">
+                        <div class="col-12">
+                            <button class="btn btn-primary" (click)="this.charactersForm.reset()">Reset</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    
+        <div class="row mt-5">
+            <div *ngFor="let character of selectedCharacters" class="col-4 mt-2">
+                <div class="card border-primary">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-3">Name:</div>
+                            <div class="col-9">{{character.name}}</div>
+    
+                            <br />
+    
+                            <div class="col-3">Hair Color:</div>
+                            <div class="col-9">{{character.hair}}</div>
+    
+                            <br />
+    
+                            <div class="col-3">Race:</div>
+                            <div class="col-9">{{character.race}}</div>
+    
+                            <br />
+    
+                            <div class="col-3">Gender:</div>
+                            <div class="col-9">{{character.gender}}</div>
+    
+                            <br />
+    
+                            <div class="col-3">Height:</div>
+                            <div class="col-9">{{character.height}}</div>
+                        
+                            <br />
+    
+                            <div class="col-3">Birth:</div>
+                            <div class="col-9">{{character.birth}}</div>
+    
+                            <br />
+    
+                            <div class="col-3">Spouse:</div>
+                            <div class="col-9">{{character.spouse}}</div>
+    
+                            <br />
+    
+                            <div class="col-3">Death:</div>
+                            <div class="col-9">{{character.death}}</div>
+    
+                            <br />
+    
+                            <div class="col-3">Realm:</div>
+                            <div class="col-9">{{character.realm}}</div>
+    
+                            <br />                        
+    
+                            <div class="col-3">Wiki Url:</div>
+                            <div class="col-9"><a href={{character.wikiUrl}} target="_blank">{{character.wikiUrl}}</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+
+</div>
