@@ -11,7 +11,7 @@ export class LordOfTheRingsCommunicationService {
 
   // This token has to be fetched from the cookie. 
   // As there is no login, hence jwt is hardcoded.
-  token = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsIm5hbWUiOiJhcmJhYXpkaW5AZ21haWwuY29tIiwidHlwZSI6IlVTRVIiLCJlbWFpbCI6ImFyYmFhemRpbkBnbWFpbC5jb20iLCJpYXQiOjE2NDI5Mzk0MTksImV4cCI6MTY0NTUzMTQxOX0.3buoiRmRxQ2uGDqJOmFNTZU_2swX2Yr8DEnVvnquoPY";
+  token = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsIm5hbWUiOiJhcmJhYXpkaW5AZ21haWwuY29tIiwidHlwZSI6IlVTRVIiLCJlbWFpbCI6ImFyYmFhemRpbkBnbWFpbC5jb20iLCJpYXQiOjE2NDI5NTM0MDEsImV4cCI6MTY0NTU0NTQwMX0.Hxh9jGvXZHNNcda6eQp6bVRV4NzXyMA91JaiuBPPTnM";
 
   // Switching urls betweem prod and dev
   getServerUrl() {
