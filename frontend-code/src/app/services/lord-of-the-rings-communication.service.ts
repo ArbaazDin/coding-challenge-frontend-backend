@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 export class LordOfTheRingsCommunicationService {
 
   devServerUrl = "http://localhost:3000";
-  prodServerUrl = "http://";
+  prodServerUrl = "http://54.193.101.230:3000";
 
   // This token has to be fetched from the cookie. 
   // As there is no login, hence jwt is hardcoded.
@@ -15,8 +15,8 @@ export class LordOfTheRingsCommunicationService {
 
   // Switching urls betweem prod and dev
   getServerUrl() {
-    return this.devServerUrl;
-    // return this.prodServerUrl;
+    // return this.devServerUrl;
+    return this.prodServerUrl;
   }
 
   constructor(private http: HttpClient) { }
